@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Итория версий
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>История версий</h1>
+        <div>
+            {% for date in history %}
+                <p><b>Дата: {{ date }}</b></p>
+                <p><b>Коммит: {{ history[date]["commit"] }}</b></p>
+                <p><b>Текст: {{ history[date]["file_content"] }}</b></p>
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}

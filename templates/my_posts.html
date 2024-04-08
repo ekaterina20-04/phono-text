@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Мои файлы
+{% endblock %}
+
+{% block body %}
+<div class="posts">
+	<h1 class="posts__title">
+		Мои файлы
+	</h1>
+
+	<h3 class="posts__subtitle">Опубликованные статьи:</h3>
+	<ul class="posts-list">
+		{% for article in articles %}
+		{% if article.status == 'published' %}
+		<li class="posts-list__item">
+			<p class="posts-list__title">
+				{{ article.title }}
+			</p>
+			<p class="posts-list__intro">
+				{{ article.intro }}
+			</p>
+			<p class="posts-list__date">
+				Дата: {{ article.date.date() }}
+			</p>
+			<a
+				class="posts-list__open"
+				href="{{ url_for('posts.posts_detail', id=article.id) }}"
+			>
+				Открыть
+			</a>
+		</li>
+		{% endif %}
+		{% endfor %}
+	</ul>
+
+	<h3 class="posts__subtitle">Черновики:</h3>
+	<ul class="posts-list">
+		{% for article in articles %}
+		{% if article.status == 'draft' %}
+		<li class="posts-list__item">
+			<p class="posts-list__title">
+				{{ article.title }}
+			</p>
+			<p class="posts-list__intro">
+				{{ article.intro }}
+			</p>
+			<p class="posts-list__date">
+				Дата: {{ article.date.date() }}
+			</p>
+			<a
+				class="posts-list__open"
+				href="{{ url_for('posts.posts_detail', id=article.id) }}"
+			>
+				Открыть
+			</a>
+		</li>
+		{% endif %}
+		{% endfor %}
+	</ul>
+
+	{% if articles|length == 0 %}
+	<p class="posts__empty">
+		Еще нет файлов
+	</p>
+	{% endif %}
+</div>
+{% endblock %}

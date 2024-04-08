@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Авторизация
+{% endblock %}
+
+{% block body %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+	{% for message in messages %}
+	<li class="flashes__item">
+		{{ message }}
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+<form class="login-form" method="POST">
+	<div class="login-form__content">
+		<label class="label">
+			<p class="subtitle">
+				Логин
+			</p>
+			<input
+				class="input"
+				placeholder="Введите логин"
+				type="text"
+				name="login"
+			/>
+		</label>
+
+		<label class="label">
+			<p class="subtitle">
+				Пароль
+			</p>
+			<input
+				class="input"
+				placeholder="Введите пароль"
+				type="password"
+				name="password"
+			/>
+		</label>
+
+		<div class="login-form__buttons">
+
+			<a
+				class="button button--register"
+				href="{{ url_for('register') }}"
+			>
+				Регистрация
+			</a>
+
+			<button
+				class="button button--login"
+				type="submit"
+			>
+				Войти
+			</button>
+
+		</div>
+	</div>
+</form>
+{% endblock %}

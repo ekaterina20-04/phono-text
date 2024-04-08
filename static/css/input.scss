@@ -1,0 +1,78 @@
+@import "fonts";
+
+.label {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+}
+
+.subtitle {
+  @include manrope-font(12px, bold);
+}
+
+.input,
+.textarea {
+  @include manrope-font(16px, regular);
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: solid 1px grey;
+}
+
+.textarea {
+  resize: none;
+
+  &--description {
+    height: 120px;
+  }
+
+  &--main {
+    height: 400px;
+  }
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+
+  &__text {
+    @include manrope-font(16px, regular);
+  }
+}
+
+.create-form,
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.create-button,
+.update-button {
+  border-radius: 5px;
+  @include manrope-font(20px, bold);
+  border: none;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #007bff;
+  color: #fff;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.save-button {
+  border-radius: 5px;
+  @include manrope-font(20px, bold);
+  border: none;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #28a745;
+  color: #fff;
+
+  &:hover {
+    background-color: #218838;
+  }
+}

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Живой стилистический словарь
+{% endblock %}
+
+{% block body %}
+<h1 class="posts__title">
+	Добавление файла
+</h1>
+<form class="create-form" method="POST" action="/create-article">
+	<label class="label">
+		<p class="subtitle">
+			Название
+		</p>
+		<input
+			class="input"
+			type="text"
+			name="title"
+			id="title"
+			placeholder="Введите название"
+		/>
+	</label>
+
+	<label class="label">
+		<p class="subtitle">
+			Описание
+		</p>
+		<textarea
+			class="textarea textarea--description"
+			name="intro"
+			id="intro"
+			placeholder="Введите описание"
+		></textarea>
+	</label>
+
+	<label class="label">
+		<p class="subtitle">
+			Основная часть
+		</p>
+		<textarea
+			class="textarea textarea--main"
+			name="text"
+			id="text"
+			placeholder="Введите текст"
+		></textarea>
+	</label>
+
+
+	<label class="label">
+		<p class="subtitle">
+			Статус:
+		</p>
+		<div class="radio-group">
+			<input
+				type="radio"
+				name="status"
+				value="draft"
+				checked
+			/>
+			<span class="radio-group__text">
+					Черновик
+				</span>
+		</div>
+		<div class="radio-group">
+			<input
+				type="radio"
+				name="status"
+				value="published"
+			/>
+			<span class="radio-group__text">
+					Опубликовано
+				</span>
+		</div>
+	</label>
+
+
+	<label class="label">
+		<p class="subtitle">
+			Пользователи, которым предоставить доступ (через запятую):
+		</p>
+		<textarea
+			class="textarea"
+			name="access_users"
+			id="access_users"
+			placeholder="Введите логины через запятую"
+		></textarea>
+	</label>
+
+
+	<button class="create-button" type="submit">
+		Создать статью
+	</button>
+</form>
+
+{% endblock %}

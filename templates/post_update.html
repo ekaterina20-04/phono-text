@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактирование
+{% endblock %}
+
+{% block body %}
+<h1 class="posts__title">
+	Редактирование
+</h1>
+<form class="edit-form" method="post">
+	<label class="label">
+		<p class="subtitle">
+			Название
+		</p>
+		<input
+			class="input"
+			type="text"
+			name="title"
+			id="title"
+			value="{{ article.title }}"
+			placeholder="Введите название"
+		/>
+	</label>
+
+	<label class="label">
+		<p class="subtitle">
+			Описание
+		</p>
+		<textarea
+			class="textarea textarea--description"
+			name="intro"
+			id="intro"
+			placeholder="Введите описание"
+		>{{ article.intro }}
+			</textarea>
+	</label>
+
+
+	<label class="label">
+		<p class="subtitle">
+			Основная часть
+		</p>
+		<textarea
+			class="textarea textarea--main"
+			name="text"
+			id="text"
+			placeholder="Введите текст"
+		>{{ article.text }}
+		</textarea>
+	</label>
+
+	<label class="label">
+		<p class="subtitle">
+			Сообщение коммита
+		</p>
+		<textarea
+			class="textarea textarea--description"
+			name="commit"
+			id="commit"
+			placeholder="Введите сообщение коммита"
+		></textarea>
+	</label>
+
+	{% if current_user.id == article.user_id %}
+	<label class="label">
+		<p class="subtitle">Пользователи, которым предоставить доступ (через запятую):</p>
+		<textarea
+			class="textarea textarea--description"
+			name="access_users"
+			placeholder="Введите логины через запятую"
+		></textarea>
+	</label>
+	{% endif %}
+
+	<input
+		class="update-button"
+		type="submit"
+		name="update"
+		value="Обновить"
+	>
+	<input
+		class="save-button"
+		type="submit"
+		name="save_changes"
+		value="Сохранить версию"
+	>
+</form>
+{% endblock %}

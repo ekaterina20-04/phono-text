@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Авторизация
+{% endblock %}
+
+{% block body %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+	{% for message in messages %}
+	<li class="flashes__item">
+		{{ message }}
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+<form class="login-form" method="POST">
+	<div class="login-form__content">
+		<label class="label">
+			<p class="subtitle">
+				Логин
+			</p>
+			<input
+				class="input"
+				placeholder="Введите логин"
+				type="text"
+				name="login"
+			/>
+		</label>
+
+		<label class="label">
+			<p class="subtitle">
+				Пароль
+			</p>
+			<input
+				class="input"
+				placeholder="Введите пароль"
+				type="password"
+				name="password"
+			/>
+		</label>
+
+		<label class="label">
+			<p class="subtitle">
+				Повторите пароль
+			</p>
+			<input
+				class="input"
+				placeholder="Введите пароль повторно"
+				type="password"
+				name="password2"
+			/>
+		</label>
+
+		<div class="login-form__buttons">
+
+			<a
+				class="button button--register"
+				href="{{ url_for('login_page') }}"
+			>
+				Вход
+			</a>
+
+			<button
+				class="button button--login"
+				type="submit"
+			>
+				Зарегистрироваться
+			</button>
+
+		</div>
+	</div>
+</form>
+{% endblock %}

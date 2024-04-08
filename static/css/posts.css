@@ -1,0 +1,202 @@
+@font-face {
+  font-family: Manrope;
+  src: url("../fonts/Manrope/Manrope-VariableFont_wght.woff2") format("woff2"), url("../fonts/Manrope/Manrope-VariableFont_wght.woff") format("woff"), url("../fonts/Manrope/Manrope-VariableFont_wght.ttf") format("truetype"), url("../fonts/Manrope/Manrope-VariableFont_wght.otf") format("opentype"), url("../fonts/Manrope/Manrope-VariableFont_wght.eot") format("embedded-opentype");
+}
+.posts {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 100%;
+}
+.posts__title {
+  font-family: Manrope, serif;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: normal;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.posts__subtitle {
+  font-family: Manrope, serif;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: normal;
+  color: #333333;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.posts__empty {
+  font-family: Manrope, serif;
+  font-size: 24;
+  font-weight: regular;
+  line-height: normal;
+  text-align: center;
+  font-style: italic;
+  color: #989898;
+}
+.posts-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: deepskyblue 2px solid;
+  background: aliceblue;
+  border-radius: 20px;
+  gap: 10px;
+}
+.posts-card__title {
+  font-family: Manrope, serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: normal;
+  color: #333333;
+}
+.posts-card__intro {
+  font-family: Manrope, serif;
+  font-size: 16px;
+  font-weight: regular;
+  line-height: normal;
+}
+.posts-card__group {
+  display: flex;
+  justify-content: space-between;
+}
+.posts-card__date, .posts-card__author {
+  font-family: Manrope, serif;
+  font-size: 12px;
+  font-weight: regular;
+  line-height: normal;
+}
+.posts-card__date span, .posts-card__author span {
+  font-weight: bold;
+}
+.posts-card__open {
+  font-family: Manrope, serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: normal;
+  width: fit-content;
+  text-decoration: none;
+  padding: 4px 16px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+}
+.posts-card__open:hover {
+  background-color: #0056b3;
+}
+.posts-list__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: deepskyblue 2px solid;
+  background: aliceblue;
+  border-radius: 20px;
+  gap: 10px;
+}
+.posts-list__intro {
+  font-family: Manrope, serif;
+  font-size: 16px;
+  font-weight: regular;
+  line-height: normal;
+}
+.posts-list__date {
+  font-family: Manrope, serif;
+  font-size: 12px;
+  font-weight: regular;
+  line-height: normal;
+}
+.posts-list__title {
+  font-family: Manrope, serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: normal;
+}
+.posts-list__open {
+  font-family: Manrope, serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: normal;
+  width: fit-content;
+  text-decoration: none;
+  padding: 4px 16px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+}
+.posts-list__open:hover {
+  background-color: #0056b3;
+}
+.posts-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 2px solid deepskyblue;
+  border-radius: 20px;
+}
+.posts-details__title {
+  font-family: Manrope, serif;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: normal;
+  color: #333333;
+}
+.posts-details__subtitle {
+  font-family: Manrope, serif;
+  font-size: 20px;
+  font-weight: regular;
+  line-height: normal;
+  color: #333333;
+}
+.posts-details__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.posts-details__date, .posts-details__author {
+  font-family: Manrope, serif;
+  font-size: 14px;
+  font-weight: regular;
+  line-height: normal;
+}
+.posts-details__group {
+  display: flex;
+  gap: 10px;
+}
+.posts-details__button {
+  width: fit-content;
+  text-decoration: none;
+  padding: 4px 16px;
+  border-radius: 5px;
+  font-family: Manrope, serif;
+  font-size: 14px;
+  font-weight: regular;
+  line-height: normal;
+}
+.posts-details__button--history, .posts-details__button--publish {
+  background-color: #007bff;
+  color: #fff;
+}
+.posts-details__button--history:hover, .posts-details__button--publish:hover {
+  background-color: #0056b3;
+}
+.posts-details__button--edit {
+  background-color: #28a745;
+  color: #fff;
+}
+.posts-details__button--edit:hover {
+  background-color: #218838;
+}
+.posts-details__button--delete {
+  background-color: #ff6f6f;
+  color: #fff;
+}
+.posts-details__button--delete:hover {
+  background-color: #bc4444;
+}
+
+/*# sourceMappingURL=posts.css.map */

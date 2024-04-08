@@ -1,0 +1,93 @@
+@font-face {
+  font-family: Manrope;
+  src: url("../fonts/Manrope/Manrope-VariableFont_wght.woff2") format("woff2"), url("../fonts/Manrope/Manrope-VariableFont_wght.woff") format("woff"), url("../fonts/Manrope/Manrope-VariableFont_wght.ttf") format("truetype"), url("../fonts/Manrope/Manrope-VariableFont_wght.otf") format("opentype"), url("../fonts/Manrope/Manrope-VariableFont_wght.eot") format("embedded-opentype");
+}
+.label {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+}
+
+.subtitle {
+  font-family: Manrope, serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.input,
+.textarea {
+  font-family: Manrope, serif;
+  font-size: 16px;
+  font-weight: regular;
+  line-height: normal;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: solid 1px grey;
+}
+
+.textarea {
+  resize: none;
+}
+.textarea--description {
+  height: 120px;
+}
+.textarea--main {
+  height: 400px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+.radio-group__text {
+  font-family: Manrope, serif;
+  font-size: 16px;
+  font-weight: regular;
+  line-height: normal;
+}
+
+.create-form,
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.create-button,
+.update-button {
+  border-radius: 5px;
+  font-family: Manrope, serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: normal;
+  border: none;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #007bff;
+  color: #fff;
+}
+.create-button:hover,
+.update-button:hover {
+  background-color: #0056b3;
+}
+
+.save-button {
+  border-radius: 5px;
+  font-family: Manrope, serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: normal;
+  border: none;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #28a745;
+  color: #fff;
+}
+.save-button:hover {
+  background-color: #218838;
+}
+
+/*# sourceMappingURL=input.css.map */

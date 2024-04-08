@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang=ru>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<link rel="stylesheet" href="/static/css/default.css">
+	<link rel="stylesheet" href="/static/css/login.css">
+	<link rel="stylesheet" href="/static/css/posts.css">
+	<link rel="stylesheet" href="/static/css/input.css">
+
+	<title>
+		{% block title %}
+		{% endblock %}
+	</title>
+</head>
+
+<body>
+
+<header class="header">
+	<div class="container">
+		<div class="header__wrapper">
+			<a href="/">
+				<img
+					class="header__logo"
+					src="/static/images/logo.png"
+					alt=""
+				/>
+			</a>
+			{% if not current_user.is_authenticated %}
+			<div class="header__info">
+				<div class="header__buttons">
+					<a class="button button--register" href="/register">
+						Регистрация
+					</a>
+					<a class="button button--login" href="/login">
+						Вход
+					</a>
+				</div>
+			</div>
+			{% endif %}
+			{% if current_user.is_authenticated %}
+			<div class="header__info">
+				<div class="header__buttons">
+					<a class="button button--register" href="/logout">
+						Выход
+					</a>
+				</div>
+			</div>
+			{% endif %}
+	</div>
+</header>
+
+<div class='navigation'>
+	<nav class="nav">
+
+		<a class="link" href="/posts">
+			Все файлы
+		</a>
+
+		<a class="link" href="/create-article">
+			Новый файл
+		</a>
+
+		<a class="link" href="/myposts">
+			Мои файлы
+		</a>
+
+	</nav>
+</div>
+
+<main class="main">
+	<div class="container">
+		{% block body %}
+		{% endblock %}
+	</div>
+</main>
+
+<footer class="footer">
+	<div class="footer__wrapper">
+
+		<div class="footer__column">
+			<h3>О нас</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, placeat.</p>
+		</div>
+
+		<div class="footer__column">
+			<h3>Свяжитесь с нами</h3>
+			<p>Email: info@example.com</p>
+			<p>Телефон: +1 (123) 456-7890</p>
+		</div>
+
+		<div class="footer__column">
+			<h3>Полезные ссылки</h3>
+			<ul>
+
+				<li>
+					<a href="/">
+						Lorem ipsum dolor sit amet.
+					</a>
+				</li>
+				<li>
+					<a href="/">
+						Lorem ipsum dolor sit amet.
+					</a>
+				</li>
+				<li>
+					<a href="/">
+						Lorem ipsum dolor sit amet.
+					</a>
+				</li>
+
+			</ul>
+		</div>
+
+	</div>
+</footer>
+
+</body>
+</html>

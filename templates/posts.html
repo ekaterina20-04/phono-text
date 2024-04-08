@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все файлы
+{% endblock %}
+
+{% block body %}
+<div class="posts">
+	<h1 class="posts__title">
+		Все файлы
+	</h1>
+
+	{% if articles|length > 0 %}
+	{% for el in articles %}
+	<div class="posts-card">
+		<h2 class="posts-card__title">
+			{{ el.title }}
+		</h2>
+		<p class="posts-card__intro">
+			{{ el.intro }}
+		</p>
+		<div class="posts-card__group">
+			<p class="posts-card__author">
+				Автор: <span>{{ authors[el.id].login }}</span>
+			</p>
+			<p class="posts-card__date">
+				Дата: {{ el.date.date() }}
+			</p>
+		</div>
+
+		<a class="posts-card__open" href="/posts/{{ el.id }}">
+			Открыть
+		</a>
+
+	</div>
+	{% endfor %}
+
+	{% else %}
+	<p>Еще нет файлов</p>
+	{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+@font-face {
+  font-family: Manrope;
+  src: url("../fonts/Manrope/Manrope-VariableFont_wght.woff2") format("woff2"), url("../fonts/Manrope/Manrope-VariableFont_wght.woff") format("woff"), url("../fonts/Manrope/Manrope-VariableFont_wght.ttf") format("truetype"), url("../fonts/Manrope/Manrope-VariableFont_wght.otf") format("opentype"), url("../fonts/Manrope/Manrope-VariableFont_wght.eot") format("embedded-opentype");
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flashes {
+  text-align: center;
+  list-style: none;
+  margin-bottom: 35px;
+}
+.flashes__item {
+  font-family: Manrope, serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+  color: #ff3d3d;
+}
+
+.login-form {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+.login-form__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.login-form__buttons {
+  justify-content: flex-end;
+  display: flex;
+  gap: 10px;
+}
+.login-form__buttons .button {
+  border-radius: 5px;
+  text-align: center;
+  padding: 4px 8px;
+  width: 200px;
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+  font-family: Manrope, serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+}
+.login-form__buttons .button--register {
+  background-color: #28a745;
+  color: #fff;
+}
+.login-form__buttons .button--register:hover {
+  background-color: #218838;
+}
+.login-form__buttons .button--login {
+  background-color: #007bff;
+  color: #fff;
+}
+.login-form__buttons .button--login:hover {
+  background-color: #0056b3;
+}
+
+/*# sourceMappingURL=login.css.map */
