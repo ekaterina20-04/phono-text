@@ -4,6 +4,8 @@ from datetime import datetime
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import check_password_hash, generate_password_hash
 
+from api import api
+
 app = Flask(__name__)
 app.secret_key= 'Chto ugodno'
 app.config['SECRET_KEY'] = 'your_secret_key_here'
@@ -20,6 +22,9 @@ from posts import app as posts_bp
 
 
 app.register_blueprint(posts_bp)
+
+# Инициализируем API в приложении Flask
+api.init_app(app)
 
 
 @manager.user_loader

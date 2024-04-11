@@ -5,7 +5,6 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 from db import *
 import git
 from datetime import datetime
-
 import os
 
 app = Blueprint('posts', __name__, url_prefix='/posts')
