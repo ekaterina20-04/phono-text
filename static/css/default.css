@@ -156,4 +156,50 @@ body {
   text-decoration: underline;
 }
 
+.history {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: deepskyblue 2px solid;
+  background: aliceblue;
+  border-radius: 20px;
+  gap: 10px;
+}
+
+.history--date {
+  font-family: Manrope, serif;
+  font-size: 20px;
+  font-weight: medium;
+  line-height: normal;
+}
+
+.history--commit {
+  font-family: Manrope, serif;
+  font-size: 20px;
+  font-weight: medium;
+  line-height: normal;
+}
+
+.history--content {
+  font-family: Manrope, serif;
+  font-size: 16px;
+  font-weight: regular;
+  line-height: normal;
+  border: deepskyblue 2px solid;
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.button--next, .button--prev {
+  padding: 12px;
+  outline: none;
+  border-radius: 16px;
+  flex: 1;
+  font-family: Manrope, serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: normal;
+}
+
 /*# sourceMappingURL=default.css.map */

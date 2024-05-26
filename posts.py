@@ -1,15 +1,16 @@
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for
+    Blueprint, flash, g, redirect, render_template, request, session, url_for, jsonify
 )
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from db import *
 import git
 from datetime import datetime
+from flask_cors import CORS
 
 import os
 
 app = Blueprint('posts', __name__, url_prefix='/posts')
-
+CORS(app)
 
 def check_directory(directory):
     path_to_dir=f'{os.path.dirname(os.path.abspath(__file__))}/{directory}'
@@ -138,7 +139,7 @@ def publish_draft(id):
 @app.route('/<int:id>/get_file_history', methods=['GET'])
 @login_required
 def get_file_history(id):
-    return render_template("get_file_history.html", history=get_git_history(fr"\articles\article_{id}"))
+    return render_template("get_file_history.html", file_id=id)
 
 
 
@@ -176,3 +177,10 @@ def get_git_history(file_path):
                     cmt=msg[8:msg.find('Date: ')]
                     all_commits[date] = {"file_content":file_content,"commit":cmt}
     return all_commits
+
+
+@app.route('/<int:id>/get_file_history_json', methods=['GET'])
+# @login_required
+def get_file_history_json(id):
+    history = get_git_history(fr"\articles\article_{id}")
+    return jsonify(history)

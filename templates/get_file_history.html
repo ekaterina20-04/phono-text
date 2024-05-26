@@ -6,13 +6,70 @@
 
 {% block body %}
 <div class="container mt-5">
-    <h1>История версий</h1>
-        <div>
-            {% for date in history %}
-                <p><b>Дата: {{ date }}</b></p>
-                <p><b>Коммит: {{ history[date]["commit"] }}</b></p>
-                <p><b>Текст: {{ history[date]["file_content"] }}</b></p>
-            {% endfor %}
-        </div>
+	<h1 class="posts__title">
+		История версий
+	</h1>
+	<div class="edit-form">
+		<div id="history" class="history"></div>
+		<div style="display: flex; gap: 20px">
+			<button id="prev" class="button--prev" disabled>Назад</button>
+			<button id="next" class="button--next" disabled>Вперед</button>
+		</div>
+	</div>
 </div>
+<script>
+    let historyData = null;
+    let currentIndex = 0;
+
+    function renderVersion(index) {
+        const dates = Object.keys(historyData);
+        const date = dates[index];
+        const data = historyData[date];
+
+        const historyDiv = document.getElementById('history');
+        historyDiv.innerHTML = '';  // очистить предыдущую версию
+
+        const dateDiv = document.createElement('div');
+        dateDiv.textContent = `Дата: ${date}`;
+        historyDiv.appendChild(dateDiv);
+        dateDiv.className = 'history--date';
+
+
+        const commitDiv = document.createElement('div');
+        commitDiv.textContent = `Коммит: ${data.commit}`;
+        historyDiv.appendChild(commitDiv);
+        commitDiv.className = 'history--commit';
+
+        const fileContentDiv = document.createElement('pre');
+        fileContentDiv.textContent = data.file_content;
+        historyDiv.appendChild(fileContentDiv);
+        fileContentDiv.className = 'history--content';
+
+        // обновить состояние кнопок
+        document.getElementById('prev').disabled = index === 0;
+        document.getElementById('next').disabled = index === dates.length - 1;
+    }
+
+    let path = window.location.pathname; // Получаем путь, например, "/posts/40/get_file_history"
+    let parts = path.split('/'); // Разделяем путь по слэшам
+    let id = parts[2]; // ID файла находится на второй позиции после разделения (индексация начинается с 0)
+
+    fetch(`http://localhost:5000/posts/${id}/get_file_history_json`)
+        .then(response => response.json())
+        .then(data => {
+            historyData = data;
+            renderVersion(currentIndex);
+        })
+        .catch((error) => console.log(error));
+
+    document.getElementById('prev').addEventListener('click', () => {
+        currentIndex--;
+        renderVersion(currentIndex);
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+        currentIndex++;
+        renderVersion(currentIndex);
+    });
+</script>
 {% endblock %}

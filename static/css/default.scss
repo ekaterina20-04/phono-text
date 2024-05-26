@@ -160,3 +160,37 @@ body {
     }
   }
 }
+
+.history {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: deepskyblue 2px solid;
+  background: aliceblue;
+  border-radius: 20px;
+  gap: 10px;
+}
+
+.history--date {
+  @include manrope-font(20px, medium);
+}
+
+.history--commit {
+  @include manrope-font(20px, medium);
+}
+
+.history--content {
+  @include manrope-font(16px, regular);
+    border: deepskyblue 2px solid;
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.button--next, .button--prev {
+  padding: 12px;
+  outline: none;
+  border-radius: 16px;
+  flex: 1;
+  @include manrope-font(20px, bold);
+}
